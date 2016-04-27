@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="candidateApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Candidates What For That There Election</title>
+
+    <base href="/" />
+
+    <!-- Libraries -->
+    <script src="vendors/angular/angular.min.js"></script>
+    <script src="vendors/angular-route/angular-route.min.js"></script>
+    <link rel="stylesheet" href="vendors/bootstrap/dist/css/bootstrap.min.css"/>
+
+    <!-- Custom -->
+    <script src="assets/scripts/client.min.js"></script>
+
+  </head>
+  <body class="container">
+    <div class="jumbotron">
+      <h1>Candidatravaganza!</h1>
+    </div>
+
+    <div class="nav navbar-default">
+      <div class="container">
+        <ul class="nav navbar-nav">
+          <li>
+            <a href="/bernie">Bernie Sanders</a>
+          </li>
+          <li>
+            <a href="/hillary">Hillary Clinton</a>
+          </li>
+          <li>
+            <a href="/trump">Donald Trump</a>
+          </li>
+          <li>
+            <a href="/kasich">John Kasich</a>
+          </li>
+          <li>
+            <a href="/cruz">Ted Cruz</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div ng-view>
+
+    </div>
+
+  </body>
+</html>
