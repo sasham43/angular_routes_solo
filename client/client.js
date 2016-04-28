@@ -31,23 +31,48 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
   $locationProvider.html5Mode(true);
 }]);
 
-app.controller('BernieController', function(){
+app.controller('BernieController', ['$http',function($http){
   var bernie = this;
-  bernie.message = 'Feel the Bern!'
-});
-app.controller('HillaryController', function(){
+  bernie.url = '';
+
+  $http.get('http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=bernie+sanders').then(function(response){
+    console.log(response);
+    bernie.url = response.data.data.image_url;
+  });
+}]);
+app.controller('HillaryController', ['$http',function($http){
   var hillary = this;
-  hillary.message = 'I\'m going to email the country to greatness';
-});
-app.controller('TrumpController', function(){
+  hillary.url = '';
+
+  $http.get('http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=hillary+clinton').then(function(response){
+    console.log(response);
+    hillary.url = response.data.data.image_url;
+  });
+}]);
+app.controller('TrumpController', ['$http',function($http){
   var trump = this;
-  trump.message = 'Make Angular Great Again';
-});
-app.controller('CruzController', function(){
+  trump.url = '';
+
+  $http.get('http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=donald+trump').then(function(response){
+    console.log(response);
+    trump.url = response.data.data.image_url;
+  });
+}]);
+app.controller('CruzController', ['$http',function($http){
   var cruz = this;
-  cruz.message = 'Don\'t look into San Francisco is the seventies, I promise I wasn\'t there.';
-});
-app.controller('KasichController', function(){
+  cruz.url = '';
+
+  $http.get('http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=ted+cruz').then(function(response){
+    console.log(response);
+    cruz.url = response.data.data.image_url;
+  });
+}]);
+app.controller('KasichController', ['$http',function($http){
   var kasich = this;
-  kasich.message = 'I don\'t stand for much, I just know I hate the Roots!';
-});
+  kasich.url = '';
+
+  $http.get('http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=john+kasich').then(function(response){
+    console.log(response);
+    kasich.url = response.data.data.image_url;
+  });
+}]);
